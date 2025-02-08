@@ -19,7 +19,7 @@ Answer:
 
 """
 
-model = OllamaLLM(model="llama3.2")
+model = OllamaLLM(model="llama3")
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
@@ -38,4 +38,4 @@ def chat():
     return jsonify({"response": result, "context": context + f"\nUser:{user_input}\nAI:{result}"})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=4000)

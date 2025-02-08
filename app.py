@@ -3,7 +3,7 @@ import requests
 
 # Function to send user input to the Flask backend
 def send_to_backend(user_input):
-    response = requests.post('http://localhost:5000/chat', json={'question': user_input, 'context': st.session_state.get('context', '')})
+    response = requests.post('http://localhost:4000/chat', json={'question': user_input, 'context': st.session_state.get('context', '')})
     if response.status_code == 200:
         return response.json()
     else:
