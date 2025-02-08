@@ -38,4 +38,5 @@ def chat():
     return jsonify({"response": result, "context": context + f"\nUser:{user_input}\nAI:{result}"})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=4000)
+    port = int(os.getenv("PORT", 4000))
+    app.run(host='0.0.0.0', port=port)
